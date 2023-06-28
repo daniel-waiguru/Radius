@@ -9,6 +9,7 @@ data class Facility(
         val icon: String,
         val id: String,
         val name: String,
-        val isSelectable: Boolean = false
+        val isSelectable: Boolean = true,
+        val isSelected: Boolean = false
     )
 }

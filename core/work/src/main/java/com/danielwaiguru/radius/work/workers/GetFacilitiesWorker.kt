@@ -12,6 +12,7 @@ import com.danielwaiguru.radius.facilities_data.mappers.toFacilityEntity
 import com.danielwaiguru.radius.facilities_data.mappers.toFacilityExclusionEntity
 import com.danielwaiguru.radius.facilities_data.models.data.network.NetworkFacility
 import com.danielwaiguru.radius.facilities_data.models.data.network.NetworkFacilityExclusion
+import com.danielwaiguru.radius.facilities_data.models.data.responses.FacilitiesResponse
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.CoroutineDispatcher
@@ -35,9 +36,9 @@ internal class GetFacilitiesWorker @AssistedInject constructor(
             radiusLocalDataSource.upsertFacilities(
                 facilities.map(NetworkFacility::toFacilityEntity)
             )
-            val facilitiesExclusion = response.body()!!.exclusions.flatten()
+            val facilitiesExclusion = response.body()!!
             radiusLocalDataSource.upsertFacilitiesExclusion(
-                facilitiesExclusion.map(NetworkFacilityExclusion::toFacilityExclusionEntity)
+                listOf(facilitiesExclusion.toFacilityExclusionEntity())
             )
 
             Result.success()

@@ -7,5 +7,7 @@ import kotlinx.coroutines.flow.Flow
 interface FacilitiesRepository {
     fun getFacilities(): Flow<List<Facility>>
 
-    fun getFacilityExclusions(): Flow<List<FacilityExclusion>>
+    fun getFacilityExclusions(): Flow<FacilityExclusion>
+
+    suspend fun getFacilityExclusion(): FacilityExclusion?
 }

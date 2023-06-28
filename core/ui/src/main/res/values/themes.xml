@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Radius" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
+    </style>
+
+    <style name="Theme.Radius" parent="Base.Theme.Radius" />
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Input">
+        <item name="strokeColor">@color/chip_background</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="closeIcon">@null</item>
+        <item name="checkedIcon">@null</item>
+    </style>
+</resources>
