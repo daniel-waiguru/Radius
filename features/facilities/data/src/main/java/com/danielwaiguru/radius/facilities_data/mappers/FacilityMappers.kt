@@ -19,3 +19,15 @@ fun NetworkFacilityExclusion.toFacilityExclusionEntity(): FacilityExclusionEntit
         facilityId = facilityId,
         optionsId = optionsId
     )
+
+internal fun FacilityExclusionEntity.toFacilityExclusion(): com.danielwaiguru.radius.models.FacilityExclusion =
+    com.danielwaiguru.radius.models.FacilityExclusion(id, facilityId, optionsId)
+internal fun FacilityEntity.toFacility(): com.danielwaiguru.radius.models.Facility =
+    com.danielwaiguru.radius.models.Facility(
+        facilityId = facilityId,
+        name = name,
+        options = options.map(FacilityEntity.OptionEntity::toOption)
+    )
+
+internal fun FacilityEntity.OptionEntity.toOption(): com.danielwaiguru.radius.models.Facility.SelectableOption =
+    com.danielwaiguru.radius.models.Facility.SelectableOption(icon, id, name)

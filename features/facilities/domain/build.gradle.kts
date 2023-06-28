@@ -2,7 +2,8 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -36,9 +37,10 @@ android {
 
 dependencies {
     implementation(project(":features:facilities:data"))
+    implementation(project(":core:models"))
+    implementation(libs.hilt.android)
+    kapt(libs.bundles.hilt.extensions)
     implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

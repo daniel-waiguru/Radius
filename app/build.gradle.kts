@@ -40,7 +40,10 @@ android {
 
 dependencies {
     implementation(project(":core:work"))
+    implementation(project(":features:facilities:presentation"))
     implementation(libs.hilt.android)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     kapt(libs.bundles.hilt.extensions)
     implementation(libs.hilt.work)
     implementation(libs.core.ktx)

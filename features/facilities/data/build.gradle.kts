@@ -38,6 +38,8 @@ android {
 dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:database"))
+    implementation(project(":core:common"))
+    implementation(project(":core:models"))
 
     implementation(libs.hilt.android)
     kapt(libs.bundles.hilt.extensions)

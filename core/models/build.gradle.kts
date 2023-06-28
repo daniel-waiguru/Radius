@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.danielwaiguru.radius.facilities_presentation"
+    namespace = "com.danielwaiguru.radius.models"
     compileSdk = 33
 
     defaultConfig {
@@ -34,12 +34,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":features:facilities:domain"))
+
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

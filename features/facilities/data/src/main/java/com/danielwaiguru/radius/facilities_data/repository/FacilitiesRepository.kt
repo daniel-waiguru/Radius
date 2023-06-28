@@ -1,7 +1,11 @@
 package com.danielwaiguru.radius.facilities_data.repository
 
-import retrofit2.Response
+import com.danielwaiguru.radius.models.Facility
+import com.danielwaiguru.radius.models.FacilityExclusion
+import kotlinx.coroutines.flow.Flow
 
 interface FacilitiesRepository {
-    suspend fun upsertFacilities()
+    fun getFacilities(): Flow<List<Facility>>
+
+    fun getFacilityExclusions(): Flow<List<FacilityExclusion>>
 }

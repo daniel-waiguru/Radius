@@ -20,6 +20,8 @@ org-jetbrains-kotlin-jvm = "1.8.21"
 javax = "1"
 gson = "2.10.1"
 lifecycle = "2.6.1"
+navigationFragmentKtx = "2.6.0"
+navigationUiKtx = "2.6.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -59,6 +61,8 @@ javax = { module = "javax.inject:javax.inject", version.ref = "javax" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 
 hilt-android-gradle-plugin = {module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

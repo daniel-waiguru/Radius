@@ -1,7 +1,8 @@
-package com.danielwaiguru.radius
+package com.danielwaiguru.radius.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.danielwaiguru.radius.R
 import com.danielwaiguru.radius.work.RadiusWorkScheduler
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
