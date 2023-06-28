@@ -15,3 +15,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Radius"
 include(":app")
+include(":core:database")
+//feature facilities
+include(
+    ":features:facilities:data",
+    ":features:facilities:domain",
+    ":features:facilities:presentation"
+)
