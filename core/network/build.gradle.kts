@@ -2,12 +2,11 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    id("com.google.devtools.ksp")
     kotlin("kapt")
 }
 
 android {
-    namespace = "com.danielwaiguru.radius.database"
+    namespace = "com.danielwaiguru.radius.network"
     compileSdk = 33
 
     defaultConfig {
@@ -36,13 +35,12 @@ android {
 }
 
 dependencies {
-    implementation(libs.bundles.room)
-    ksp(libs.room.compiler)
-
+    implementation(libs.bundles.network)
     implementation(libs.hilt.android)
     kapt(libs.bundles.hilt.extensions)
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
 }

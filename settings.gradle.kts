@@ -22,3 +22,5 @@ include(
     ":features:facilities:domain",
     ":features:facilities:presentation"
 )
+include(":core:network")
+include(":core:work")
