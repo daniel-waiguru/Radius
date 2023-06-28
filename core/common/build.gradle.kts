@@ -1,23 +1,19 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
 }
-
 android {
-    namespace = "com.danielwaiguru.radius"
+    namespace = "com.danielwaiguru.radius.common"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.danielwaiguru.radius"
         minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -39,15 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:work"))
+    implementation(libs.javax)
     implementation(libs.hilt.android)
     kapt(libs.bundles.hilt.extensions)
-    implementation(libs.hilt.work)
-    implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
 }

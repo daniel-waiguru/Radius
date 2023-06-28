@@ -5,7 +5,7 @@ import androidx.room.Upsert
 import com.danielwaiguru.radius.database.entities.FacilityExclusionEntity
 
 @Dao
-internal interface FacilityExclusionDao {
+interface FacilityExclusionDao {
     @Upsert
-    suspend fun upsertExclusions(vararg exclusions: FacilityExclusionEntity)
+    suspend fun upsertExclusions(exclusions: List<FacilityExclusionEntity>)
 }

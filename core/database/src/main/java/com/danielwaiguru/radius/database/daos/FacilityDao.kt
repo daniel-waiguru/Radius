@@ -5,8 +5,8 @@ import androidx.room.Upsert
 import com.danielwaiguru.radius.database.entities.FacilityEntity
 
 @Dao
-internal interface FacilityDao {
+interface FacilityDao {
     @Upsert
-    suspend fun upsertFacilities(vararg facilities: FacilityEntity)
+    suspend fun upsertFacilities(facilities: List<FacilityEntity>)
 
 }

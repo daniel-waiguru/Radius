@@ -7,18 +7,18 @@ import com.danielwaiguru.radius.database.entities.FacilityExclusionEntity
 import javax.inject.Inject
 
 interface RadiusLocalDataSource {
-    suspend fun upsertFacilities(vararg facilities: FacilityEntity)
+    suspend fun upsertFacilities(facilities: List<FacilityEntity>)
 
-    suspend fun upsertFacilitiesExclusion(vararg exclusions: FacilityExclusionEntity)
+    suspend fun upsertFacilitiesExclusion(exclusions: List<FacilityExclusionEntity>)
 }
 
 internal class RadiusLocalDataSourceImpl @Inject constructor(
     private val facilityDao: FacilityDao,
     private val facilityExclusionDao: FacilityExclusionDao
 ): RadiusLocalDataSource {
-    override suspend fun upsertFacilities(vararg facilities: FacilityEntity) =
-        facilityDao.upsertFacilities(*facilities)
+    override suspend fun upsertFacilities(facilities: List<FacilityEntity>) =
+        facilityDao.upsertFacilities(facilities)
 
-    override suspend fun upsertFacilitiesExclusion(vararg exclusions: FacilityExclusionEntity) =
-        facilityExclusionDao.upsertExclusions(*exclusions)
+    override suspend fun upsertFacilitiesExclusion(exclusions: List<FacilityExclusionEntity>) =
+        facilityExclusionDao.upsertExclusions(exclusions)
 }

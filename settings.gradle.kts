@@ -24,3 +24,4 @@ include(
 )
 include(":core:network")
 include(":core:work")
+include(":core:common")

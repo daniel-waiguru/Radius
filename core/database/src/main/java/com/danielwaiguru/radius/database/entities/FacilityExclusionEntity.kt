@@ -21,7 +21,7 @@ import com.danielwaiguru.radius.database.entities.FacilityExclusionEntity.Compan
 data class FacilityExclusionEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    @ColumnInfo("facility_id")
+    @ColumnInfo("facility_id", index = true)
     val facilityId: String,
     @ColumnInfo("options_id")
     val optionsId: String

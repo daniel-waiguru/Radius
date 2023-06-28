@@ -1,5 +1,6 @@
 package com.danielwaiguru.radius.network.di
 
+import com.danielwaiguru.radius.network.BuildConfig
 import com.danielwaiguru.radius.network.utils.ApiConstants.BASE_URL
 import com.google.gson.GsonBuilder
 import dagger.Module
