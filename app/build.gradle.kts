@@ -36,10 +36,14 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(project(":core:work"))
+    implementation(project(":core:ui"))
     implementation(project(":features:facilities:presentation"))
     implementation(libs.hilt.android)
     implementation(libs.androidx.navigation.fragment.ktx)

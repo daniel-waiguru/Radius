@@ -1,5 +1,6 @@
 package com.danielwaiguru.radius.facilities_data.repository
 
+import android.util.Log
 import com.danielwaiguru.radius.common.utils.Dispatcher
 import com.danielwaiguru.radius.common.utils.RadiusDispatchers
 import com.danielwaiguru.radius.database.data_source.RadiusLocalDataSource
@@ -25,9 +26,12 @@ internal class FacilitiesRepositoryImpl @Inject constructor(
                 facilitiesWithExclusions.map(FacilityEntity::toFacility)
             }.flowOn(ioDispatcher)
 
-    override fun getFacilityExclusions(): Flow<List<FacilityExclusion>> =
+    override fun getFacilityExclusions(): Flow<FacilityExclusion> =
         radiusLocalDataSource.getFacilityExclusions()
-            .map { exclusions ->
-                exclusions.map(FacilityExclusionEntity::toFacilityExclusion)
+            .map { exclusion ->
+                exclusion.toFacilityExclusion()
             }.flowOn(ioDispatcher)
+
+    override suspend fun getFacilityExclusion(): FacilityExclusion? =
+        radiusLocalDataSource.getFacilityExclusion()?.toFacilityExclusion()
 }

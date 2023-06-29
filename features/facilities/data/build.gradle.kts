@@ -47,6 +47,5 @@ dependencies {
     implementation(libs.bundles.network)
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
+    testImplementation(project(":core:testing"))
 }

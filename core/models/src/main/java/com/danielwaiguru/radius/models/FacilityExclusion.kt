@@ -2,6 +2,10 @@ package com.danielwaiguru.radius.models
 
 data class FacilityExclusion(
     val id: Int,
-    val facilityId: String,
-    val optionsId: String
-)
+    val exclusions: List<List<Exclusion>>
+) {
+    data class Exclusion(
+        val facilityId: String,
+        val optionsId: String,
+    )
+}

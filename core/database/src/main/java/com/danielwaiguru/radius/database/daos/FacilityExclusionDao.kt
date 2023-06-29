@@ -13,5 +13,8 @@ interface FacilityExclusionDao {
     suspend fun upsertExclusions(exclusions: List<FacilityExclusionEntity>)
 
     @Query("SELECT * FROM $FACILITIES_EXCLUSION_TABLE_NAME")
-    fun getExclusions(): Flow<List<FacilityExclusionEntity>>
+    fun getExclusions(): Flow<FacilityExclusionEntity>
+
+    @Query("SELECT * FROM $FACILITIES_EXCLUSION_TABLE_NAME")
+    suspend fun getFacilityExclusion(): FacilityExclusionEntity?
 }

@@ -28,3 +28,5 @@ include(
     ":features:facilities:domain",
     ":features:facilities:presentation"
 )
+include(":core:ui")
+include(":core:testing")

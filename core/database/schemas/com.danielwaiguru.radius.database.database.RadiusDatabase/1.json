@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ffb107201d81014836ac83161f0c1fa0",
+    "identityHash": "2e134b188aed72fed4fd5adc9f6c43ae",
     "entities": [
       {
         "tableName": "facilities",
@@ -38,7 +38,7 @@
       },
       {
         "tableName": "facility_exclusions",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `facility_id` TEXT NOT NULL, `options_id` TEXT NOT NULL, FOREIGN KEY(`facility_id`) REFERENCES `facilities`(`facility_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `exclusions` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -47,14 +47,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "facilityId",
-            "columnName": "facility_id",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "optionsId",
-            "columnName": "options_id",
+            "fieldPath": "exclusions",
+            "columnName": "exclusions",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -65,36 +59,14 @@
             "id"
           ]
         },
-        "indices": [
-          {
-            "name": "index_facility_exclusions_facility_id",
-            "unique": false,
-            "columnNames": [
-              "facility_id"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_facility_exclusions_facility_id` ON `${TABLE_NAME}` (`facility_id`)"
-          }
-        ],
-        "foreignKeys": [
-          {
-            "table": "facilities",
-            "onDelete": "CASCADE",
-            "onUpdate": "NO ACTION",
-            "columns": [
-              "facility_id"
-            ],
-            "referencedColumns": [
-              "facility_id"
-            ]
-          }
-        ]
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ffb107201d81014836ac83161f0c1fa0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2e134b188aed72fed4fd5adc9f6c43ae')"
     ]
   }
 }

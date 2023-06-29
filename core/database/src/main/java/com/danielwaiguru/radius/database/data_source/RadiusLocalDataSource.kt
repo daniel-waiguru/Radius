@@ -15,7 +15,9 @@ interface RadiusLocalDataSource {
 
     fun getFacilities(): Flow<List<FacilityEntity>>
 
-    fun getFacilityExclusions(): Flow<List<FacilityExclusionEntity>>
+    fun getFacilityExclusions(): Flow<FacilityExclusionEntity>
+
+    suspend fun getFacilityExclusion(): FacilityExclusionEntity?
 }
 
 internal class RadiusLocalDataSourceImpl @Inject constructor(
@@ -31,6 +33,9 @@ internal class RadiusLocalDataSourceImpl @Inject constructor(
     override fun getFacilities(): Flow<List<FacilityEntity>> =
         facilityDao.getFacilities()
 
-    override fun getFacilityExclusions(): Flow<List<FacilityExclusionEntity>> =
+    override fun getFacilityExclusions(): Flow<FacilityExclusionEntity> =
         facilityExclusionDao.getExclusions()
+
+    override suspend fun getFacilityExclusion(): FacilityExclusionEntity? =
+        facilityExclusionDao.getFacilityExclusion()
 }
