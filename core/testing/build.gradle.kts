@@ -2,12 +2,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    id("dagger.hilt.android.plugin")
-    kotlin("kapt")
 }
 
 android {
-    namespace = "com.danielwaiguru.radius.facilities_data"
+    namespace = "com.danielwaiguru.radius.testing"
     compileSdk = 33
 
     defaultConfig {
@@ -27,25 +25,23 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
-    implementation(project(":core:network"))
-    implementation(project(":core:database"))
-    implementation(project(":core:common"))
-    implementation(project(":core:models"))
-
-    implementation(libs.hilt.android)
-    kapt(libs.bundles.hilt.extensions)
-
-    implementation(libs.bundles.network)
-    implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    testImplementation(project(":core:testing"))
+    api(libs.junit4)
+    api(libs.junitExt)
+    api(libs.turbine)
+    api(libs.mock.android)
+    api(libs.mock.agent)
+    api(libs.truth)
+    api(libs.coroutines.test)
+    api(libs.androidx.arch.core.testing)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }

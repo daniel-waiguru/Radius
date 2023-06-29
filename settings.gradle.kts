@@ -29,3 +29,4 @@ include(
     ":features:facilities:presentation"
 )
 include(":core:ui")
+include(":core:testing")
