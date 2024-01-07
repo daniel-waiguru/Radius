@@ -28,7 +28,7 @@ archCore = "2.2.0"
 espressoCore = "3.5.1"
 junit4 = "4.13.2"
 junitExt = "1.1.5"
-mockk = "1.13.5"
+mockk = "1.13.9"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
