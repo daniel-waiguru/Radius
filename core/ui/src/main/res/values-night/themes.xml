@@ -4,5 +4,9 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="chipStyle">@style/Widget.Radius.Chip</item>
+    </style>
+    <style name="Widget.Radius.Chip" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipIconVisible">true</item>
     </style>
 </resources>
