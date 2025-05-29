@@ -4,15 +4,14 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     id("com.google.devtools.ksp")
     id("dagger.hilt.android.plugin")
-    kotlin("kapt")
 }
 
 android {
     namespace = "com.danielwaiguru.radius.database"
-    compileSdk = 33
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -44,7 +43,7 @@ dependencies {
     ksp(libs.room.compiler)
 
     implementation(libs.hilt.android)
-    kapt(libs.bundles.hilt.extensions)
+    ksp(libs.bundles.hilt.extensions)
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.gson)
